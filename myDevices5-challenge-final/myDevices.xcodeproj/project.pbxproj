@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		78B5FB211B8D76FC00142ECF /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B5FB201B8D76FC00142ECF /* DebugViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		78B5FB211B8D76FC00142ECF /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B5FB201B8D76FC00142ECF /* DebugViewController.swift */; };
 		78BB8AC61B7D6C54007F73C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB8AC51B7D6C54007F73C3 /* AppDelegate.swift */; };
 		78BB8AC81B7D6C54007F73C3 /* DevicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB8AC71B7D6C54007F73C3 /* DevicesTableViewController.swift */; };
 		78BB8ACB1B7D6C54007F73C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78BB8AC91B7D6C54007F73C3 /* Main.storyboard */; };
@@ -18,8 +18,8 @@
 		78BB8ADD1B7E4D5D007F73C3 /* DeviceDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB8ADC1B7E4D5D007F73C3 /* DeviceDetailTableViewController.swift */; };
 		78BB8AF21B7E685A007F73C3 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB8AEE1B7E685A007F73C3 /* Person+CoreDataProperties.swift */; };
 		78BB8AF31B7E685A007F73C3 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB8AEF1B7E685A007F73C3 /* Person.swift */; };
-		78BB8AF41B7E685A007F73C3 /* Device+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB8AF01B7E685A007F73C3 /* Device+CoreDataProperties.swift */; };
 		78BB8AF51B7E685A007F73C3 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB8AF11B7E685A007F73C3 /* Device.swift */; };
+		EDBF6CCA1CDE156A009C8955 /* Device+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBF6CC91CDE156A009C8955 /* Device+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +36,8 @@
 		78BB8ADC1B7E4D5D007F73C3 /* DeviceDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetailTableViewController.swift; sourceTree = "<group>"; };
 		78BB8AEE1B7E685A007F73C3 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		78BB8AEF1B7E685A007F73C3 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		78BB8AF01B7E685A007F73C3 /* Device+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		78BB8AF11B7E685A007F73C3 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		EDBF6CC91CDE156A009C8955 /* Device+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +72,8 @@
 			children = (
 				78BB8AEE1B7E685A007F73C3 /* Person+CoreDataProperties.swift */,
 				78BB8AEF1B7E685A007F73C3 /* Person.swift */,
-				78BB8AF01B7E685A007F73C3 /* Device+CoreDataProperties.swift */,
 				78BB8AF11B7E685A007F73C3 /* Device.swift */,
+				EDBF6CC91CDE156A009C8955 /* Device+CoreDataProperties.swift */,
 				78BB8AC51B7D6C54007F73C3 /* AppDelegate.swift */,
 				78BB8AC71B7D6C54007F73C3 /* DevicesTableViewController.swift */,
 				78BB8ADC1B7E4D5D007F73C3 /* DeviceDetailTableViewController.swift */,
@@ -165,7 +165,7 @@
 				78B5FB211B8D76FC00142ECF /* DebugViewController.swift in Sources */,
 				78BB8ACE1B7D6C54007F73C3 /* myDevices.xcdatamodeld in Sources */,
 				78BB8AF31B7E685A007F73C3 /* Person.swift in Sources */,
-				78BB8AF41B7E685A007F73C3 /* Device+CoreDataProperties.swift in Sources */,
+				EDBF6CCA1CDE156A009C8955 /* Device+CoreDataProperties.swift in Sources */,
 				78BB8ADB1B7E4A2F007F73C3 /* PeopleTableViewController.swift in Sources */,
 				78BB8AC61B7D6C54007F73C3 /* AppDelegate.swift in Sources */,
 			);

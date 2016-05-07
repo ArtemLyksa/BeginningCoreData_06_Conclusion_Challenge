@@ -26,11 +26,21 @@ import CoreData
 class DeviceDetailTableViewController: UITableViewController {
   var device: Device?
   var managedObjectContext: NSManagedObjectContext!
-
-  @IBOutlet weak var nameTextField: UITextField!
-  @IBOutlet weak var deviceTypeTextField: UITextField!
-  @IBOutlet weak var deviceOwnerLabel: UILabel!
-
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var deviceTypeTextField: UITextField!
+    @IBOutlet weak var deviceOwnerLabel: UILabel!
+    @IBOutlet weak var purchaseDateTextField: UITextField!
+    @IBOutlet weak var deviceIDTextfield: UITextField!
+    @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var toolBar: UIToolbar!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        purchaseDateTextField.inputView = datePicker
+        purchaseDateTextField.inputAccessoryView = toolBar
+        purchaseDateTextField.delegate = self
+    }
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
 
@@ -43,19 +53,48 @@ class DeviceDetailTableViewController: UITableViewController {
       } else {
         deviceOwnerLabel.text = "Set device owner"
       }
+        if let deviceID = device.deviceID {
+            deviceIDTextfield.text = deviceID
+        }
+        if let devicePurchaseData = device.purchaseData {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            purchaseDateTextField.text = dateFormatter.stringFromDate(devicePurchaseData)
+        }
     }
   }
+    @IBAction func cancelAction(sender: AnyObject) {
+        purchaseDateTextField.resignFirstResponder()
+    }
 
+    @IBAction func doneAction(sender: AnyObject) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        purchaseDateTextField.text = dateFormatter.stringFromDate(datePicker.date)
+        purchaseDateTextField.resignFirstResponder()
+
+        
+    }
+    
   override func viewWillDisappear(animated: Bool) {
     if let device = device, name = nameTextField.text, deviceType = deviceTypeTextField.text {
       device.name = name
       device.deviceType = deviceType
+
     } else if device == nil {
       if let name = nameTextField.text, deviceType = deviceTypeTextField.text, entity = NSEntityDescription.entityForName("Device", inManagedObjectContext: managedObjectContext) where !name.isEmpty && !deviceType.isEmpty {
         device = Device(entity: entity, insertIntoManagedObjectContext: managedObjectContext)
         device?.name = name
         device?.deviceType = deviceType
       }
+    }
+    if let deviceID = deviceIDTextfield.text {
+        device?.deviceID = deviceID
+    }
+    if let purchaseDate = purchaseDateTextField.text {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        device?.purchaseData = dateFormatter.dateFromString(purchaseDate)
     }
 
     do {
@@ -94,6 +133,21 @@ extension DeviceDetailTableViewController: PersonPickerDelegate {
     }
   }
 }
+
+extension DeviceDetailTableViewController: UITextFieldDelegate {
+     func textFieldDidBeginEditing(textField: UITextField) {
+
+        if let purchaseDate = purchaseDateTextField.text {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            if let datePurch = dateFormatter.dateFromString(purchaseDate) {
+            datePicker.date = datePurch
+            }
+        }
+    }
+
+}
+
 
 
 
